@@ -1,4 +1,4 @@
-# ---------------------------------------- GET DATA FROM API ---------------------------------------- #
+# --------------------------------------------------------------- GET DATA FROM API --------------------------------------------------------------- #
 
 
 # Set the API endpoint and the required parameters
@@ -18,7 +18,7 @@ price=$(echo $data | jq '.USD' | awk '{printf "%d\n", $1 + 0.5}')
 echo "The current price of Ethereum is $"$price"."
 
 
-# --------------------------------------- INSERT DATA INTO DB --------------------------------------- #
+# -------------------------------------------------------------- INSERT DATA INTO DB -------------------------------------------------------------- #
 
 
 # Insert the data into the database
@@ -34,7 +34,7 @@ while read -r line; do
         done <<< "$results"
 
 
-# ----------------------------------- CHECK IF DATA IS ABNORMAL ------------------------------------- #
+# ---------------------------------------------------------- CHECK IF DATA IS ABNORMAL ------------------------------------------------------------ #
 
 # calculate the mean and standard deviation of the data in the "data_last_month.txt" file
 mean=$(awk '{sum+=$1} END {print sum/NR}' ./../data_last_month.txt)
@@ -53,7 +53,7 @@ if (( $(awk -v zscore=$zscore 'BEGIN {print (zscore < -3)}') )) || (( $(awk -v z
     # Print a message indicating that the current price is abnormal
     echo "The current price of Ethereum is abnormal ($price). It is $num_stddev standard deviations away from the mean."
     sqlite3 ./../database/anomaly_db "INSERT INTO price_anomaly (price, num_stddev, date) VALUES ($price, $num_stddev, datetime('now'));"
-    curl --data chat_id="-1001699317441" --data-urlencode "text=The current price of Ethereum is abnormal ($price). It is $num_stddev standard deviations away from the mean." "https://api.telegram.org/bot5780978293:AAFziQuGxWjUoW45nWRH2rOJw9uEJ5Ezhd4/sendMessage?parse_mode=HTML"
+    curl --data chat_id="-1001699317441" --data-urlencode "text=The current price of Ethereum is abnormal ($price). It is $num_stddev standard deviations away from the mean." "https://api.telegram.org/bot5780978293:YOUR_API_KEY/sendMessage?parse_mode=HTML"
 else
     # Print a message indicating that the current price is normal
     echo "The current price of Ethereum is normal ($price)."
