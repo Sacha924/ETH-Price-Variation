@@ -3,6 +3,12 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+You can see what the final project looks like by clicking and this link --> https://eth-price-variation-pl5kgjktb-sachadcode.vercel.app/main
+
+## Before diving in deep
+
+The purpose of this project was to learn new skills and not to use the site I created to inform me of anomalies in the price of ether, and because I do not want to run scripts all day long, the automatic execution scripts to retrieve the price of ether, to modify the database, and therefore to modify the front end, will be stopped. 
+
 ## Getting Started
 
 First, run the development server:
