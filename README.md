@@ -109,6 +109,11 @@ Both the lastMonthData.sh and the main.sh are executed at a period of 10 minutes
 you can run crontab even if you are on windows : using third-party software such as Cygwin or GnuWin32. These programs allow you to run Unix commands on your Windows computer, including crontab. However, you will need to install this software and configure your environment to be able to use crontab on Windows.
 
 
+## SQL Secutiry
+
+In this code, there is no functionality that would allow a user to inject SQL code into the database. The database is loaded from a previously created .db file stored on the server, and no SQL query is executed on the database from the user's input.
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
