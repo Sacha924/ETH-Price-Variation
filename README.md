@@ -3,7 +3,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-You can see what the final project looks like by clicking and this link --> https://eth-price-variation-pl5kgjktb-sachadcode.vercel.app/main
+You can see what the final project looks like by clicking and this link --> https://eth-price-variation.vercel.app/main
 
 ## Before diving in deep
 
