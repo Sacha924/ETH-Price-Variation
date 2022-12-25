@@ -90,10 +90,6 @@ But you may ask how we check if "this is a normal price or not"?
 We use a script called lastMonthData.sh that allows us, by calling the same API (with a different entry point), to get the price of ETH over the last month, at each hour. These data are stored in a file called data_last_month.txt, and can be used to detect abnormal price by using the z-score, which is a measure of how many standard deviations a data point is from the mean of a dataset
 
 
-## crontab
-
-
-
 ## Others 
 
 about the 2 first rows in the anomaly_db, I create theses rows by myself by hardcoding the price of eth at 0$ or 123456$, to show that the code detect anomaly. So it's not an accurate old value, but just a test that show that everything is good.  
