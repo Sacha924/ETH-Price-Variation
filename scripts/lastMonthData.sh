@@ -17,4 +17,4 @@ params="fsym=ETH&tsym=USD&limit=720&aggregate=1&toTs=$end_timestamp&api_key=YOUR
 
 # Make the request to the CryptoCompare API and parse the JSON response using jq
 curl "$base_url?$params" | jq '.Data.Data[] | "\(.close)"' | sed 's/"//g' | awk '{printf "%d\n", $1 + 0.5}' > ./../data_last_month.txt
-git add data_last_month && git commit -m "Updating data_last_month.txt" && git push origin master
+git add "./../data_last_month.txt" && git commit -m "Updating data_last_month.txt" && git push origin master
