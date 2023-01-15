@@ -53,6 +53,7 @@ if (( $(awk -v zscore=$zscore 'BEGIN {print (zscore < -3)}') )) || (( $(awk -v z
     # Print a message indicating that the current price is abnormal
     echo "The current price of Ethereum is abnormal ($price). It is $num_stddev standard deviations away from the mean."
     sqlite3 ./../database/anomaly_db "INSERT INTO price_anomaly (price, num_stddev, date) VALUES ($price, $num_stddev, datetime('now'));"
+    git add . && git commit -m "Updating anomaly_database" && git push origin master
     curl --data chat_id="-1001699317441" --data-urlencode "text=The current price of Ethereum is abnormal ($price). It is $num_stddev standard deviations away from the mean." "https://api.telegram.org/bot5780978293:YOUR_API_KEY/sendMessage?parse_mode=HTML"
 else
     # Print a message indicating that the current price is normal
