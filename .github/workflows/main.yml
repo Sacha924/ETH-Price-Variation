@@ -1,12 +1,12 @@
-# name: ETH-Price-Variation 10 minutes Script
-# on:
-#   schedule:
-#     - cron: "*/10 * * * *"
-# jobs:
-#   main:
-#     runs-on: windows-2022
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-#       - name: Run script
-#         run: ./scripts/main.sh
+name: ETH-Price-Variation 10 minutes Script
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+jobs:
+  main:
+    runs-on: windows-2022
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run script
+        run: ./scripts/main.sh
