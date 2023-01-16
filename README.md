@@ -104,7 +104,12 @@ Note that we can have 0 anomaly for months with our calculation methods, and a t
 
 ## WBU automation
 
-automation : we use crontab to allow the script to run every 10 minutes
+
+I use github actions, and thanks to my yml file I will run automatically at regular time intervals. If there is a modification of the database (i.e. detection of an anomaly) the code (and thus the modification) is pushed to my github repo.
+
+
+On linux :  
+automation : we can use crontab to allow the script to run every 10 minutes
 
 Both the lastMonthData.sh and the main.sh are executed at a period of 10 minutes.
 
