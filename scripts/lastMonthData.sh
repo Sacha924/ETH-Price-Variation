@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "../.env"
+
 # Calculate the start and end times for the past month
 now=$(date +%s)
 start_time=$((now - 2592000))  # 30 days in seconds
@@ -21,3 +23,4 @@ git config user.email "sacha.simon@edu.devinci.fr"
 git config user.name "Sacha924"
 git remote set-url origin https://x-access-token:$PAT@github.com/Sacha924/ETH-Price-Variation.git
 git add "./../data_last_month.txt" && git commit -m "Updating data_last_month.txt" && git push origin master
+
