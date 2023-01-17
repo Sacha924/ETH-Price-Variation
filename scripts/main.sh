@@ -63,5 +63,3 @@ else
     # Print a message indicating that the current price is normal
     echo "The current price of Ethereum is normal ($price)."
 fi
-# results=$(sqlite3 ./../database/anomaly_db "SELECT * FROM price_anomaly")
-# echo $results
